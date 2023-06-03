@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">@color/Azure</color>
+    <color name="colorPrimaryVariant">@color/Blue_Orchid</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorPrimary2">@color/Light_Aquamarine</color>
+    <color name="colorSecondary">@color/Azure</color>
+    <color name="colorSecondaryVariant">@color/Blue_Orchid</color>
+    <color name="colorOnSecondary">@color/white</color>
+    <color name="colorSecondary2">@color/Light_Aquamarine</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

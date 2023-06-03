@@ -1,6 +1,34 @@
 <resources>
     <string name="app_name">MyAnimeApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_myAnimes">My Animes</string>
+    <string name="title_search">Search</string>
+    <string name="splash_imageDescription">iconImage</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_action">Sign in</string>
+    <string name="login_welcome">"Welcome, Login!"</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_signUpLink">SignUp or Register?</string>
+
+    <string name="signUp_email_hint">Email</string>
+    <string name="signUp_password_hint">Password</string>
+    <string name="signUp_repPassword_hint">Repeat Password</string>
+    <string name="signUp_action">Sign Up or register</string>
+    <string name="signUp_welcome">"Welcome, Sign Up!"</string>
+    <string name="signUp_failed">"Sign Up failed"</string>
+    <string name="signUp_loginLink">SignIn?</string>
+
+    <string name="general_email_error">Invalid Email User</string>
+    <string name="general_password_error">Password too short</string>
+    <string name="general_passwordDigits">qwetyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789!#$%&amp;*</string>
+    <string name="general_differentPasswords_error">The Passwords are Different</string>
+    <string name="database_error">Database Error</string>
+
+    <string name="profile_welcome_text">Welcome, %1$s !</string>
+    <string name="profile_logout_button">Logout</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

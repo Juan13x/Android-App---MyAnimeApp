@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315072829137",
+    "firebase_url": "https://pruebase-4c7ba-default-rtdb.firebaseio.com",
+    "project_id": "pruebase-4c7ba",
+    "storage_bucket": "pruebase-4c7ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315072829137:android:ba4bb830441e873f1757f0",
+        "android_client_info": {
+          "package_name": "com.example.myanimeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315072829137-aie2io0qfkvb4vuefli2sqi2rsj9vhqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNkc7S2EZneVP4nLATZxPq6PYjapurBRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315072829137-aie2io0qfkvb4vuefli2sqi2rsj9vhqh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 package com.example.myanimeapp.remote_access.remote_repositories
 
-import com.example.myanimeapp.models.User
+import com.example.myanimeapp.models.remote_cloud_access.User
 import com.example.myanimeapp.remote_access.RemoteResult
 
 interface RemoteRepository {
@@ -9,6 +9,6 @@ interface RemoteRepository {
     suspend fun getAnimesFromUser(email: String): RemoteResult<MutableList<Int>>
     suspend fun loginUser(email: String, password: String) : RemoteResult<User>
     suspend fun signUpUser(email: String, password: String) : RemoteResult<User>
-    suspend fun updateAnimeList(Array: Array<Int>) : RemoteResult<Boolean>
+    suspend fun updateAnimeList(animes: ArrayList<Int>) : RemoteResult<Boolean>
     suspend fun logout()
 }

@@ -2,5 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="cardViews_imageWidth">150dp</dimen>
+    <dimen name="cardViews_imageHeight">150dp</dimen>
+    <dimen name="searchView_maxLength">60</dimen>
     <integer name="general_maxPasswordLength">20</integer>
 </resources>

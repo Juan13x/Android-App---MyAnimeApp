@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.myanimeapp.R
 import com.example.myanimeapp.databinding.FragmentProfileBinding
 import com.example.myanimeapp.ui.register.login.LoginActivity
 import com.google.firebase.ktx.Firebase
@@ -26,6 +27,7 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         with(binding){
+            profileWelcomeTextView.text = getString(R.string.profile_welcome_text, model.getUserEmail())
             profileLogoutButton.setOnClickListener{
                 model.logout()
                 //TODO: clear persistent Data HERE

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class AnimesSearch(
     @SerializedName("data")
-    val `data`: List<Data>,
+    val data: List<Data_AnimesSearch>,
     @SerializedName("paging")
-    val paging: Paging
+    val pagingAnimesSearch: Paging_AnimesSearch
 )

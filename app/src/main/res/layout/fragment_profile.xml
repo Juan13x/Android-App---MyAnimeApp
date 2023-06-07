@@ -22,10 +22,13 @@
 
     <TextView
         android:id="@+id/profile_welcome_textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/profile_welcome_text"
+        android:textAlignment="center"
         android:textColor="@color/Black"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"

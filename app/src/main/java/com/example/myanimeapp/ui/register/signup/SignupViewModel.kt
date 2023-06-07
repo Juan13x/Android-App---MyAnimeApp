@@ -6,16 +6,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myanimeapp.R
-import com.example.myanimeapp.remote_access.MyRepository
+import com.example.myanimeapp.remote_access.MyRemoteRepository
 import com.example.myanimeapp.remote_access.remote_repositories.RemoteRepository
 import com.example.myanimeapp.remote_access.e_StatusResult
-import com.example.myanimeapp.ui.register.RegisterErrorData
-import com.example.myanimeapp.ui.register.e_RegisterError
+import com.example.myanimeapp.models.errors.ErrorData
+import com.example.myanimeapp.models.errors.e_Error
 import kotlinx.coroutines.launch
 
 class SignupViewModel: ViewModel() {
-    private val errorMutableLiveData: MutableLiveData<RegisterErrorData> = MutableLiveData()
-    val errorLiveData: LiveData<RegisterErrorData> = errorMutableLiveData
+    private val errorMutableLiveData: MutableLiveData<ErrorData> = MutableLiveData()
+    val errorLiveData: LiveData<ErrorData> = errorMutableLiveData
 
     private val successMutableLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val successLiveData: LiveData<Boolean> = successMutableLiveData
@@ -23,7 +23,7 @@ class SignupViewModel: ViewModel() {
     private val loadingStateMutableLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val loadingStateLiveData: LiveData<Boolean> = loadingStateMutableLiveData
 
-    private val remoteRepository : RemoteRepository = MyRepository().getInstanceRepository()
+    private val remoteRepository : RemoteRepository = MyRemoteRepository().getInstanceRepository()
 
     // A placeholder username validation check
     private fun isUserNameValid(userEmail: String): Boolean {
@@ -41,22 +41,22 @@ class SignupViewModel: ViewModel() {
 
     private fun areFieldsOk(email: String, password: String, repPassword: String): Boolean{
         return if (!isUserNameValid(email)){
-            errorMutableLiveData.value = RegisterErrorData(
-                errorEvent = e_RegisterError.Email,
+            errorMutableLiveData.value = ErrorData(
+                errorEvent = e_Error.Email,
                 errorMessageInt = R.string.general_email_error
             )
             false
         }
         else if (!isPasswordValid(password)){
-            errorMutableLiveData.value = RegisterErrorData(
-                errorEvent = e_RegisterError.Password,
+            errorMutableLiveData.value = ErrorData(
+                errorEvent = e_Error.Password,
                 errorMessageInt = R.string.general_password_error
             )
             false
         }
         else if(!isPasswordValid(repPassword)){
-            errorMutableLiveData.value = RegisterErrorData(
-                errorEvent = e_RegisterError.RepPassword,
+            errorMutableLiveData.value = ErrorData(
+                errorEvent = e_Error.RepPassword,
                 errorMessageInt = R.string.general_password_error
             )
             false
@@ -76,8 +76,8 @@ class SignupViewModel: ViewModel() {
                     }
                     else
                         errorMutableLiveData.postValue(
-                            RegisterErrorData(
-                                errorEvent = e_RegisterError.GenericStr,
+                            ErrorData(
+                                errorEvent = e_Error.GenericStr,
                                 errorMessageStr = result.errorMessage
                             )
                         )
@@ -85,8 +85,8 @@ class SignupViewModel: ViewModel() {
             }
             else{
                 errorMutableLiveData.value =
-                    RegisterErrorData(
-                        e_RegisterError.GenericInt,
+                    ErrorData(
+                        e_Error.GenericInt,
                         R.string.general_differentPasswords_error
                     )
             }

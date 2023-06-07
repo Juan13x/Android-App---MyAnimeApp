@@ -31,4 +31,9 @@
     <string name="profile_logout_button">Logout</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cardViews_unknownEpisodes">Unknown</string>
+    <string name="search_defaultTypeQuery_text">Animes Airing:</string>
+    <string name="search_query_hint">Search Anime</string>
+    <string name="search_getAiringAnimes_text">Airing Animes</string>
+    <string name="search_Result">Results for: %1$s</string>
 </resources>

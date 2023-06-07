@@ -1,6 +1,6 @@
 package com.example.myanimeapp.remote_access.remote_repositories
 
-import com.example.myanimeapp.models.User
+import com.example.myanimeapp.models.remote_cloud_access.User
 import com.example.myanimeapp.remote_access.RemoteResult
 import com.example.myanimeapp.remote_access.e_StatusResult
 import com.google.firebase.auth.ktx.auth
@@ -11,6 +11,7 @@ import kotlinx.coroutines.tasks.await
 
 class FirebaseRepository: RemoteRepository {
     private val userDB = "users"
+    private val fieldAnimes = "animes"
     private val auth = Firebase.auth
     private val db = Firebase.firestore
 
@@ -118,8 +119,17 @@ class FirebaseRepository: RemoteRepository {
         }
     }
 
-    override suspend fun updateAnimeList(Array: Array<Int>): RemoteResult<Boolean> {
-        TODO("Not yet implemented")
+    override suspend fun updateAnimeList(animes: ArrayList<Int>): RemoteResult<Boolean> {
+        return try{
+            val user = auth.currentUser!!.email!!
+            db.collection(userDB).document(user).update(fieldAnimes, animes).await()
+            RemoteResult.Success(true)
+        }catch(exception: Exception){
+            RemoteResult.Error(
+                exception = exception,
+                errorMessage = exception.message
+            )
+        }
     }
 
     override suspend fun logout(){

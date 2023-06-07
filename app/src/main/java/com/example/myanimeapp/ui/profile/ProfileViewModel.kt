@@ -1,19 +1,23 @@
 package com.example.myanimeapp.ui.profile
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myanimeapp.remote_access.MyRepository
+import com.example.myanimeapp.persistent.LocalRepository
+import com.example.myanimeapp.remote_access.MyRemoteRepository
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class ProfileViewModel : ViewModel() {
-    private val remoteRepository = MyRepository().getInstanceRepository()
+    private val remoteRepository = MyRemoteRepository().getInstanceRepository()
+    private val localRepository = LocalRepository()
     fun logout() {
-        runBlocking {
+        viewModelScope.launch {
+            localRepository.deleteAll()
             remoteRepository.logout()
         }
     }
+
+    fun getUserEmail(): String = runBlocking { remoteRepository.getCurrentUserId()!! }
+
 
 }

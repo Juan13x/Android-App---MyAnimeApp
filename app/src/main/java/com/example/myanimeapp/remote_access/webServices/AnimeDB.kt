@@ -8,8 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object AnimeDB {
     private val urlApi = "https://api.myanimelist.net/v2/"
 
+    var stateCreationSearch = false
     private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+//        .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         .build()
 
     val retrofit : ApiService = Retrofit.Builder()

@@ -15,11 +15,39 @@
         android:id="@+id/navigation_my_animes"
         android:name="com.example.myanimeapp.ui.my_animes.MyAnimesFragment"
         android:label="@string/title_myAnimes"
-        tools:layout="@layout/fragment_my_animes" />
+        tools:layout="@layout/fragment_my_animes" >
+        <action
+            android:id="@+id/action_navigation_my_animes_to_detailsFragment"
+            app:destination="@id/navigation_details" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
         android:name="com.example.myanimeapp.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_detailsFragment"
+            app:destination="@id/navigation_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.example.myanimeapp.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="stateInterface"
+            app:argType="com.example.myanimeapp.ui.e_Interfaces"
+            android:defaultValue="SEARCH" />
+        <argument
+            android:name="animePos"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <action
+            android:id="@+id/action_navigation_details_to_navigation_my_animes"
+            app:destination="@id/navigation_my_animes" />
+        <action
+            android:id="@+id/action_navigation_details_to_navigation_search"
+            app:destination="@id/navigation_search" />
+    </fragment>
 </navigation>
